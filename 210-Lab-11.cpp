@@ -35,11 +35,24 @@ void addCourse(Student& student, string course){
     }
 
     newCourses[student.courseCount] = course;
-    delete[i] student.courses;
-    student.courses = new newCourses;
+    delete[] student.courses;
+    student.courses = newCourses;
     student.courseCount++;
 }
 
 void printStudent(const Student& student){
-    cout << "Name: " << student.name
+    cout << "Student Name: " << student.name << endl;
+    cout << "Student ID: " << student.studentID << endl;
+    cout << "Enrolled Courses: ";
+
+    if (student.courseCount == 0){
+        cout << "None";
+    } else {
+        for (int i = 0; i < student.courseCount; i+){
+            cout << student.course[i];
+            if (i < student.courseCount - 1){
+                cout << ", ";
+            }
+        }
+    }
 }
