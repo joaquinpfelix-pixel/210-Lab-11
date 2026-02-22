@@ -19,7 +19,7 @@ struct Student {
 
 void addCourse(Student& student, string course);
 
-
+void printStudent(const Student& student);
 
 int main (){
     const int STUDENT_COUNT = 3;
@@ -44,8 +44,23 @@ int main (){
 
     addCourse(students[1], "Computer Science 101");
 
-    addcourse(students[2], "History 101");
-    addCourse)
+    addCourse(students[2], "History 101");
+    addCourse(students[2], "Biology 101");
+    addCourse(students[2], "Chemistry 101");
+
+    cout << "UNIVERSITY ENROLLMENT SYSTEM" << endl;
+    cout << "============================" << endl;
+
+    for(int i = 0; i < STUDENT_COUNT; i++){
+        printStudent(students[i]);
+    }
+
+    for (int i = 0; i < STUDENT_COUNT; i++){
+        delete[] students[i].courses;
+    }
+    delete[] students;
+
+    return 0;
     
 }
 void addCourse(Student& student, string course){
@@ -71,7 +86,7 @@ void printStudent(const Student& student){
     if (student.courseCount == 0){
         cout << "None";
     } else {
-        for (int i = 0; i < student.courseCount; i+){
+        for (int i = 0; i < student.courseCount; i++){
             cout << student.courses[i];
             if (i < student.courseCount - 1){
                 cout << ", ";
